@@ -1,6 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+
+    /* Setting the background image */
+    background-image: url('images/Title.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /* Animation */
+    animation: bgAnimation 15s infinite alternate;
   }
   
   header, nav, main, footer {
@@ -32,3 +41,11 @@ body {
     text-decoration: underline;
   }
   
+  @keyframes bgAnimation {
+    0% {
+        background-size: 100% 100%;
+    }
+    100% {
+        background-size: 110% 110%;
+    }
+}
