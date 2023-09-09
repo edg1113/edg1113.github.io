@@ -10,14 +10,14 @@ body {
     opacity: 1;
     transition: opacity 0.3s;
 
-    /* /* Animation
+    /* /*Animation
     animation: bgAnimation 15s infinite alternate; */
   }
   
   header, nav, main, footer {
-    max-width: 300px;
-    margin: 100px auto;
-    padding: 0px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
   }
   
   header {
