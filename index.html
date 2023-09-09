@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LVM Laboratory</title>
-  <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVM Laboratory</title>
+    <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
 
-  <header>
-    <h1>LVM Lab</h1>
-  </header>
+    <header>
+        <h1>LVM Lab</h1>
+    </header>
 
-  <img src="images/Title.jpg" alt="Title image">
+    <img src="images/Title.jpg" alt="Title image" class="img_resize">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="datasets.html">Datasets</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="datasets.html">Datasets</a></li>
+        </ul>
+    </nav>
 
-  <main>
-    <section id="introduction">
-      <h2>Welcome to LVM Laboratory</h2>
-      <p>Short intro about the lab and its main objectives.</p>
-    </section>
-    
-    <section id="latest-news">
-      <h2>Latest News</h2>
-      <!-- You can list the latest news or updates here -->
-    </section>
-  </main>
+    <main>
+        <section id="introduction">
+        <h2>Welcome to LVM Laboratory</h2>
+        <p>Short intro about the lab and its main objectives.</p>
+        </section>
+        
+        <section id="latest-news">
+        <h2>Latest News</h2>
+        <!-- You can list the latest news or updates here -->
+        </section>
+    </main>
 
-  <footer>
-    <p>2023 Computer Vision Laboratory. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>2023 Computer Vision Laboratory. All rights reserved.</p>
+    </footer>
+
+    <script>
+    window.addEventListener('scroll', function() {
+        let opacity = 1 - (window.scrollY / window.innerHeight);
+        if (opacity < 0) opacity = 0;
+        document.body.style.opacity = opacity;
+    });
+    </script>
 
 </body>
 </html>

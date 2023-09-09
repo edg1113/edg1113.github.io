@@ -7,9 +7,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    opacity: 1;
+    transition: opacity 0.3s;
 
-    /* Animation */
-    animation: bgAnimation 15s infinite alternate;
+    /* /* Animation
+    animation: bgAnimation 15s infinite alternate; */
   }
   
   header, nav, main, footer {
@@ -48,4 +50,9 @@ body {
     100% {
         background-size: 110% 110%;
     }
+}
+
+.img-resize{
+    width: 300px;
+    height: auto;
 }
