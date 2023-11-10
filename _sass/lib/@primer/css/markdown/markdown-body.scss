@@ -1,0 +1,164 @@
+// All of our block level items should have the same margin
+// stylelint-disable selector-max-type
+
+// This is styling for generic markdownized text. Anything you put in a
+// container with .markdown-body on it should render generally well. It also
+// includes some GitHub Flavored Markdown specific styling (like @mentions)
+.markdown-body {
+  font-family: "Inter";
+  font-size: $h4-size;
+  line-height: $body-line-height;
+  word-wrap: break-word;
+
+  @import "../base/kbd.scss"; // adds support for keyboard shortcuts
+
+  // Clearfix on the markdown body
+  &::before {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  // Anchors like <a name="examples">. These sometimes end up wrapped around
+  // text when users mistakenly forget to close the tag or use self-closing tag
+  // syntax. We don't want them to appear like links.
+  // FIXME: a:not(:link):not(:visited) would be a little clearer here (and
+  // possibly faster to match), but it breaks styling of <a href> elements due
+  // to https://bugs.webkit.org/show_bug.cgi?id=142737.
+  a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  // Link Colors
+  .absent {
+    color: $text-red;
+  }
+
+  .anchor {
+    float: left;
+    padding-right: $spacer-1;
+    // stylelint-disable-next-line primer/spacing
+    margin-left: -20px;
+    line-height: $lh-condensed-ultra;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  table,
+  pre,
+  details {
+    margin-top: 0;
+    margin-bottom: $spacer-3;
+  }
+
+  hr {
+    height: $em-spacer-3;
+    padding: 0;
+    margin: $spacer-4 0;
+    // stylelint-disable-next-line primer/colors
+    background-color: $gray-200;
+    border: 0;
+  }
+
+  blockquote {
+    color: $text-gray-light;   
+    border-radius: 1rem;
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+    p{
+      background-color: $codeblock-color;
+      padding: 1.2rem 1rem;
+      border-radius: 1rem;
+      border-left: 0.5rem solid lightgray;
+    }
+  }
+
+  $blockquote-h1: rgba(#3b2e58,0.9);
+  $blockquote-h2: rgba(#054b16,0.9);
+  $blockquote-h3: rgba(#004173,0.9);
+  $blockquote-h4: rgba(#630001,0.9);
+  $blockquote-h5: rgba(#6a4b16,0.9);
+  
+  blockquote {
+    h1,h2,h3,h4,h5 {
+      padding: 1rem 1rem;
+      border-radius: 1rem;
+      font-weight: 400;
+      font-size: var(--quote-tag-font-size);
+      border-bottom: none;
+      font-family: var(--base-font);
+      line-height: 35px;
+      color: white;
+    }
+  }
+  blockquote {
+    h1{background-color: $blockquote-h1;}
+    h2{background-color: $blockquote-h2;}
+    h3{background-color: $blockquote-h3;}
+    h4{background-color: $blockquote-h4;}
+    h5{background-color: $blockquote-h5;}
+  }
+
+  blockquote{
+    h1::before{
+      display: block;
+      content: "✎ Note";
+      color: white;
+      font-family: var(--title-font);
+      font-size: var(--quote-tag-font-size);
+    }
+    h2::before{
+      display: block;
+      content: "💡 Tip";
+      color: white;
+      font-family: var(--title-font);
+      font-size: var(--quote-tag-font-size);
+    }
+    h3::before{
+      display: block;
+      content: "﹗⃝ Important";
+      color: white;
+      font-family: var(--title-font);
+      font-size: var(--quote-tag-font-size);
+    }
+    h4::before{
+      display: block;
+      content: "⊗ Caution";
+      color: white;
+      font-family: var(--title-font);
+      font-size: var(--quote-tag-font-size);
+    }
+    h5::before{
+      display: block;
+      content: "❗ Warning";
+      color: white;
+      font-family: var(--title-font);
+      font-size: var(--quote-tag-font-size);
+    }
+  }
+}

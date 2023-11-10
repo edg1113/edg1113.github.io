@@ -1,0 +1,266 @@
+@import "utils";
+
+$tag-color: #c460aa;
+
+html{font-size: 0.7vw;}
+
+.publication-detail{
+    .detail-header{
+        z-index: -1;
+        margin-top: -22rem;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        .detail-img{
+            -webkit-filter: brightness(.7);
+            filter: brightness(.7);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .detail-header-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            .detail-title{
+                width: 80%;
+                font-size: 5rem;
+                text-align: center;
+                color: white;
+                line-height: 6rem;
+            }
+            .detail-abstract{
+                color: white;
+                width: 80%;
+                margin-top: 15rem;
+                padding: 4rem 2rem;
+                font-size: 1.8rem;
+                background-color: #172b4d;
+                .detail-abstract-date{
+                    text-align: center;
+                }
+                .detail-abstract-content{
+                    margin-top: 3rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .detail-content{
+        width: 80%;
+        margin: auto;
+        margin-top: 5rem;
+    }
+}
+
+.publication{
+    padding-top: 80px;
+    width: 85%;
+    margin: auto;
+    a{
+        padding: 0;
+        line-height: 0;
+        color: $text-color;
+    }
+    ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    li{
+        margin-bottom: 2.5rem;
+    }
+    .pub-card{
+        display: flex;
+        border: 0.1rem solid #DCDCDC;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        box-shadow: 0.3rem 0.3rem 0.5rem 0.3rem rgba(0,0,0,0.03);
+        padding: 2rem;
+        .pub-img{
+            flex: 2;
+            img{
+                width: 100%;
+            }
+            margin: 0 1.5rem 0 1.5rem
+        }
+        .pub-content{
+            flex: 6;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 1rem 0 1rem;
+            p{
+                margin: 0;
+            }
+            .pub-title{
+                font-size: 1.8rem;
+                line-height: 2rem;
+            }
+            .info{
+                font-size: 1.4rem;
+                color: $text-color-gray;
+                margin-top: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+            .contents{
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical; 
+                text-overflow: ellipsis;
+                line-height: 2.2rem;
+                text-align: justify;
+                overflow: hidden;
+                font-size: 1.3rem;
+                color: #84898c;
+                margin-bottom: 1.5rem;
+            }
+            .tag-div{
+                align-items: flex-end;
+            }
+            .tag{
+                padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+                margin-right: 1rem;
+                border: 0.5px solid $tag-color;
+                border-radius: 0.9rem;
+                font-size: 1.3rem;
+                color: $tag-color;
+            }
+        }
+        .pub-icon{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.5rem;
+            .icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 9.4rem;
+                height: 5.4rem;
+                border-radius: 0.8rem;
+                span{
+                    font-size: 1.3rem;
+                    margin-left: 0.5rem;
+                }
+                .icon1{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+                .icon2{
+                    width: 2.6rem;
+                    height: 2.6rem;
+                }
+            }
+        }
+    }
+}
+
+
+@include desktop{
+    html {font-size: 62.5%}
+    .publication{
+        width: 140rem;
+    }
+    .publication-detail .detail-content{
+        width: 140rem;
+    }
+    .publication-detail .detail-header .detail-header-box .detail-abstract{
+        width: 140rem;
+    }
+}
+
+@include laptop{
+    html {font-size: 60.5%;}
+    .publication .pub-card .pub-img img{
+        width: 24rem;
+    }
+}
+
+@include tablet{
+    html {font-size: 60.5%;}
+    .publication{
+        width: 75%;
+        .pub-card{
+            flex-direction: column;
+            align-items: flex-start;
+            .pub-img{
+                img{
+                    width:50%;
+                }
+                width: 100%;
+                text-align: center;
+            }
+            .pub-content .info{
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+            .pub-icon{
+                display: flex;
+                flex-direction: row;
+                margin: 1.5rem 0 0 1rem;
+                .icon{
+                    margin-right: 1.5rem;
+                    width: 9.4rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+    .publication-detail .detail-content{
+        width: 75%;
+    }
+    .publication-detail{
+        .detail-header{
+            height: 130vh;
+            margin-top: -36.3rem;
+            .detail-header-box{
+                top: 65%;
+                .detail-title{
+                    width: 90%;
+                    font-size: 3.5rem;
+                    line-height: 3.5rem;
+                }
+                .detail-abstract{
+                    padding: 3rem 2rem;
+                    margin-top: 5rem;
+                    width: 90%;
+                    .detail-abstract-content{
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .publication{
+        width: 95%;
+    }
+    .publication .pub-card .pub-content{
+        .contents{
+            line-height: 2rem;
+        }
+    }
+    .publication-detail .detail-content{
+        width: 95%;
+    }
+    .publication-detail{
+        .detail-header{
+            .detail-header-box{
+                top: 70%;
+                .detail-abstract{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="header">
+			<H1><a href="/" class="log">CILAB</a></H1>
+			<nav class="main-nav">
+				<div class="main-nav-box">
+					<ul class="ul-reset">
+						{% for item in site.data.navigation %}
+							<li class="main-nav-li">
+								<a 
+									href="{{ item.link }}" 
+									{% if page.url == item.link %}
+										class="main-nav-a current"
+									{% else %}
+										class="main-nav-a"
+									{% endif %}
+								>
+									{{ item.name }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</nav>
+			<div class="nav-icon">
+				<img src="/assets/icons/bars-solid.svg" class="main-nav-bar"></i>
+				<button class="toggle" ><img src="/assets/images/home/toggle.png"></button>
+			</div>
+		</div>
+	</div>
+	<div class="nav-box">
+		{% for item in site.data.navigation %}
+			<li class="nav-li white-hover gray-hover">
+				<a 
+					href="{{ item.link }}" 
+					{% if page.url == item.link %}
+						class="nav-current"
+					{% endif %}
+				>
+					{{ item.name }}
+				</a>
+			</li>
+		{% endfor %}
+	</div>
+</div>

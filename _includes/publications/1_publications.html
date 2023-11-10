@@ -1,0 +1,38 @@
+<div class="publication">
+    <ul>
+        {% for pub in site.publications %}
+            <li>
+                <div class="pub-card">
+                    <div class="pub-img">
+                        <a href={{pub.url}}>
+                            <img src= {{ pub.img }}>
+                        </a>
+                    </div>
+                    <div class="pub-content">
+                        <p class="pub-title"><a href={{ pub.url }}>{{ pub.title }}</a></p>
+                        <p class="info">{{ pub.author }} • {{pub.publication}} • {{pub.date | date: "%d %b %Y"}}</p>
+                        <div class="contents">{{ pub.abstract }}</div>
+                        <div class="tag-dev">
+                            {% for tag in pub.tags %}
+                            <span class="tag"># {{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="pub-icon">
+                        <a href={{ pub.paper_url }}>
+                            <div class="icon" style="background-color: #afe5f1;"><img src="/assets/icons/paper_icon.svg" class="icon1">
+                                <span>Paper</span>
+                            </div>
+                        </a>
+                        <div style="height: 10px"></div>
+                        <a href={{ pub.code_url }}>
+                            <div class="icon" style="background-color: #f1dfaf;"><img src="/assets/icons/github_icon.svg" class="icon2">
+                                <span>Code</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>                    
+</div>

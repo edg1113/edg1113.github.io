@@ -1,0 +1,50 @@
+<section class="section grey-bg" style="background-color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <div class="section-info">
+                        <h2>Professor</h2>
+                        <p></p>
+                    </div>
+                    <div>
+                        <div>
+                            {% assign members = site.members | where:"position", "Research Professor" %}
+                            {% for member in members %}
+                            <div class="wide-profile-view">
+                                <div class="profile-left">
+                                    <div class="profile-img">
+                                        <a href="{{ member.url }}"><img src="{{ member.img_url }}"></a>
+                                    </div>
+                                    <div class="profile-name-pos">
+                                        <h3>{{ member.name | capitalize }}</h3>
+                                        <p>{{ member.position | capitalize }}</p>
+                                        <div>
+                                            <a href="{{ memeber.github }}"><img src="/assets/icons/member_card_github.svg"></a>
+                                            <a href="mailto:{{ memeber.email }}"><img src="/assets/icons/member_card_envelope.svg"></a>
+                                            <a href="{{ memeber.profile }}"><img src="/assets/icons/member_card_person.svg"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-desc">
+                                    <h1>{{ member.introduction }}</h1>
+                                    <p>{{ member.description }}</p>
+                                    <ul>
+                                        {% assign interests = member.research_interests | slice: 0,3 %}
+                                        {% for interest in interests %}
+                                        <li>- {{ interest }}</li>
+                                        {% endfor %}
+                                        {% if member.research_interests.size > 3 %}
+                                        <li>...</li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>

@@ -1,0 +1,71 @@
+@import "utils";
+
+$tag-color: #c460aa;
+
+html{font-size: 0.7vw;}
+
+.markdown-body {
+  width: 100%;
+  a {
+    color: $theme-color;
+    &:hover {
+      text-decoration: underline;
+      color: lightseagreen;
+    }
+    code, tt {
+      color: $theme-color;
+    }
+  }
+
+  figure {margin: 0;}
+  
+  .task-list-item-checkbox {
+    margin-right: 3px;
+  }
+  code, tt {
+    font-size: 70%;
+    border: $border;
+    color: darkorange;
+    background-color: darken($bg-white, 2%);
+  }
+
+  pre {
+    > code {
+      color: $text-color;
+    }
+  }
+}
+
+.joins{
+    display: flex;
+    width: 85%;
+    margin: auto;
+    padding: 5rem 0rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@include desktop{
+    html {font-size: 62.5%}
+    .joins{
+        width: 130rem;
+    }
+}
+
+@include laptop{
+    html {font-size: 60.5%;}
+}
+
+@include tablet{
+    html {font-size: 60.5%;}
+    .joins{
+        width: 75%;
+    }
+}
+
+@include mobile{
+    .joins{
+        width: 95%;
+    }
+}

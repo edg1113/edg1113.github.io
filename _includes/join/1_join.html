@@ -1,0 +1,11 @@
+{% assign idx = 0 %}
+{% for join in site.joins %}
+    {% assign odd = idx | modulo: 2 %}
+    {% if odd == 0 %}
+        {% assign gray_mode = 0 %}
+    {% else %}
+        {% assign gray_mode = 1 %}
+    {% endif %}
+    {% include join/_join_item.html %}
+    {% assign idx = idx | plus: 1 %}
+{% endfor %}

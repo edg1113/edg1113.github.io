@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<!-- <div class="title">
+    <h1>Member Details</h1>
+    <p>Describe our member in details</p>
+</div> -->
+<section class="section grey-bg" style="background-color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <div class="section-info">
+                        <h2>{{ page.position }}</h2>
+                        <p></p>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="wide-profile-view">
+                                <div class="profile-left">
+                                    <div class="profile-img">
+                                        <a><img src="{{ page.img_url | replace: 'members', 'members_large' }}"></a>
+                                    </div>
+                                    <div class="profile-name-pos">
+                                        <h3>{{ page.name | capitalize }}</h3>
+                                        <p>{{ page.position | capitalize }}</p>
+                                        <div>
+                                            <a href="{{ page.github }}"><img src="/assets/icons/member_card_github.svg"></a>
+                                            <a href="{{ page.email }}"><img src="/assets/icons/member_card_envelope.svg"></a>
+                                            <a href="{{ page.profile }}"><img src="/assets/icons/member_card_person.svg"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-desc">
+                                    <h1>{{ page.introduction }}</h1>
+                                    <p>{{ page.description }}</p>
+                                    <ul>
+                                        {% assign interests = page.research_interests | slice: 0,3 %}
+                                        {% for interest in interests %}
+                                        <li>- {{ interest }}</li>
+                                        {% endfor %}
+                                        {% if page.research_interests.size > 3 %}
+                                        <li>...</li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>
+<div class="joins">
+    <div class="markdown-body">
+        {{ content | markdownify }}                
+    </div>
+</div>
